@@ -1,0 +1,6 @@
+.DS_Store
+private_key.pem
+training_data.csv
+training_data_update.csv
+node_modules
+

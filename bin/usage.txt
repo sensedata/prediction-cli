@@ -1,0 +1,72 @@
+usage: sdpredict -e EMAIL -k PRIVATE_KEY_FILE COMMAND COMMAND_PARAMS
+
+COMMON_OPTIONS
+  -e, --email         service account email address - e.g., 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com
+  -k, --keyfile       path to private key file - e.g., ./private_key.pem
+  -p, --project       project id - e.g., sylvan-agility-538
+  -m, --model         model id (NOTE: not needed for 'list' command) - e.g., model-three 
+
+COMMANDS
+
+analyze
+  Get analysis of the model and the data the model was trained on.
+  
+  COMMAND_PARAMS
+  none
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three analyze 
+  
+delete
+  Delete a trained model.
+
+  COMMAND_PARAMS
+  none
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three delete 
+  
+get
+  Check training status of your model.
+  
+  COMMAND_PARAMS
+  none
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three get 
+  
+insert
+  Train a Prediction API model.
+  
+  COMMAND_PARAMS
+  -i, --csv         training data file on Google Cloud Storage in csv format
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three insert -i bucket-name/training_data.csv 
+  
+list
+  List available models.
+  
+  COMMAND_PARAMS
+  none
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 list 
+  
+predict
+  Submit model id and request a prediction.
+  
+  COMMAND_PARAMS
+  value - a string you wish to query the model for a prediction - e.g., "The quick brown fox jumped over the lazy dog."
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three predict "The quick brown fox jumped over the lazy dog." 
+
+update
+  Add new data to a trained model.
+
+  COMMAND_PARAMS
+  -i, --csv         training data file in csv format
+  
+  EXAMPLE
+  sdpredict -e 12345678901-asdf787s8d7as8f7sfasdasd88sd8asdf8@developer.gserviceaccount.com -k ./private_key.pem -p sylvan-agility-538 -m model-three update -i ./training_data.csv

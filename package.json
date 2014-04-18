@@ -1,0 +1,17 @@
+{
+  "name": "prediction-cli",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A simple CLI for Google Prediction API.",
+  "main": "index.js",
+  "bin": {
+    "prediction-cli": "bin/cmd.js"
+  },
+  "author": "matthew.jones@sensedata.com",
+  "dependencies": {
+    "googleapis": "0.7.0",
+    "minimist": "0.0.8",
+    "concat-stream": "1.4.4",
+    "csv": "0.3.7"
+  }
+}
