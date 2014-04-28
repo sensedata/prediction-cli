@@ -1,6 +1,6 @@
 # Introduction
 
-This is the CLI for the Google Prediction API.
+This is a CLI for the Google Prediction API.
 
 
 # Mac Prerequisites for Development
@@ -43,7 +43,8 @@ Or, follow instructions at https://developers.google.com/storage/docs/gsutil_ins
 > Node.js currently does not support direct access to the keys stored within PKCS12 file
 > (see issue comment https://github.com/joyent/node/issues/4050#issuecomment-8816304)
 > so the private key must be extracted and converted to a passphrase-less RSA key:
-> openssl pkcs12 -in key.p12 -nocerts -nodes | openssl rsa -out key.pem
+
+        $ openssl pkcs12 -in private_key.p12 -nocerts -nodes | openssl rsa -out private_key.pem
 
 3. Clone this repository.
 
